@@ -52,7 +52,7 @@ jobs:
 
       - name: Create comment - watching for progress
         run: |
-          gh issue comment "$ISSUE_URL" \
+          gh issue secrets.GITHUB_TOKEN omment "$ISSUE_URL" \
             --body-file exercise-toolkit/markdown-templates/step-feedback/watching-for-progress.md
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -61,4 +61,4 @@ jobs:
         run: |
           gh workflow enable "Step 1"
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{  }}
